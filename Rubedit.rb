@@ -9,21 +9,38 @@ def edit_file(filename,string1,string2)
     File.open(filename, "w") { |file| file << content }
 end
 
-puts '==============='
-puts 'RubyRenamer v1'
-puts '==============='
+puts "============================="
+puts "Rubedit v1"
+puts "github.com/michaljach/Rubedit"
+puts "============================="
 
-puts 'Enter filename to edit:'
-filename = gets.chomp
+puts "Select option:"
+puts "1 -- Edit one file with given name"
+puts "2 -- Edit multiple files with given names"
+puts "3 -- Edit all files in given directory"
 
-puts 'Enter STRING that will be replaced:'
-string1 = gets.chomp
+a = gets
 
-puts 'Enter STRING to replace with:'
-string2 = gets.chomp
+case Integer(a)
+when 1
+	puts "Enter filename to edit:"
+	filename = gets.chomp
 
-if File.file?(filename)
-    edit_file filename,string1,string2
+	if File.file?(filename)
+		puts "Enter STRING that will be replaced:"
+		string1 = gets.chomp
+		
+		puts "Enter STRING to replace with:"
+		string2 = gets.chomp
+	
+	    edit_file filename,string1,string2
+	else
+		puts "File #{filename} not exists."
+	end
+when 2
+	puts '2'
+when 3
+	puts '3'
 else
-	puts 'File ' + filename + ' not exists.'
+	puts "Wrong menu number!"
 end
