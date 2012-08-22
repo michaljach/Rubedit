@@ -11,3 +11,6 @@ Download zip package with `Rubedit.rb` file or copy file content and save as `Ru
 
 	chmod +x Rubedit.rb
 	./Rubedit.rb
+
+## Usage
+Just follow information on termial screen, it's easy !
