@@ -6,7 +6,7 @@ def edit_file(filename,string1,string2)
     file.close
 
     content.gsub!(string1,string2)
-    File.open(filename, "w") { |file| file << content }
+    File.open(filename, "w") { |file| file.puts content }
 end
 
 puts "============================="
@@ -33,7 +33,7 @@ when 1
 		puts "Enter STRING to replace with:"
 		string2 = gets.chomp
 	
-	    edit_file filename,string1,string2
+		edit_file filename,string1,string2
 	else
 		puts "File #{filename} not exists."
 	end
